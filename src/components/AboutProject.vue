@@ -74,10 +74,17 @@
     <br />
 
     <h1 class="text-4xl font-bold">Future Prospects</h1>
-    <p class="text-md mt-4">With explicit permission from the users taken at the time of onboarding, the
+    <p class="text-md mt-4"><span class="font-bold">
+        Research Data: </span>With explicit permission from the users taken
+      at the time of onboarding, the
       large amount of conversation data can later be stripped of personal information and analyzed to better understand
       the underlying issues. This can help to improve the available data and research regarding the mental health
       support infrastructures in Canada.</p>
+    <p class="text-md mt-4"><span class="font-bold">
+        Further Development: </span>As the project is open-source, other
+      developers and researchers interested in improving the platform through various contributions will be able to do
+      so. Additionally, being under the GNU GPL-3.0 License this project promotes the open-source software development
+      and allows others to create their own versions as long as the source is open-sourced.</p>
   </div>
   <a id="home" class="text-xs" href="/">
     <span class="grid z-10 justify-center place-content-center fixed right-0 m-12 bottom-0 border
