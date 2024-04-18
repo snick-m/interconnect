@@ -11,13 +11,18 @@ function joinChat() {
 <template>
   <div class="col-span-2 flex flex-col items-center justify-center">
     <div class="flex flex-col items-center text-center text-white my-12">
-      <h1 class="text-4xl font-bold my-4">Interconnect</h1>
       <div class="w-2/3">
         <p class="text-md text-neutral-400">Welcome to Interconnect: Fostering Support and Solidarity for Racialized
           Individuals with Disabilities. Join us in amplifying voices, sharing experiences, and advocating for inclusive
           mental health resources in the face of systemic barriers, including incarceration and ableism.
           <br />
           <a href="/about" class="text-blue-500">Why? Learn more -></a>
+        </p>
+        <br />
+
+
+        <p class="text-md text-neutral-400">Not what you're looking for?
+          <a href="/about" class="text-blue-500">Alternate Resources -></a>
         </p>
       </div>
     </div>
