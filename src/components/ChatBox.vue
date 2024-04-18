@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useFirestore, useCollection } from 'vuefire'
-import { collection, addDoc, orderBy, query, limit, where } from 'firebase/firestore'
-import { computed, ref, } from 'vue'
+import { collection, addDoc, orderBy, query, limit } from 'firebase/firestore'
+import { computed, ref } from 'vue'
+import { onBeforeRouteUpdate, useRoute, useRouter } from 'vue-router';
 
 const sendBox = ref('')
 const newRoomName = ref('')
@@ -10,11 +11,13 @@ const newRoomTags = ref('')
 
 const showCreateBox = ref(false)
 
-const searchParams = new URLSearchParams(window.location.search)
-const room = searchParams.get('name') || 'global'
-const username = searchParams.get('user')
+const router = useRouter()
+const route = useRoute()
+
+const room = route.query.name || 'global'
+const username = route.query.user
 if (!username) {
-  window.location.href = '/'
+  router.push('/')
 }
 
 const db = useFirestore()
@@ -24,8 +27,15 @@ const rooms = useCollection(query(collection(db, 'rooms'), orderBy('name')))
 //   window.location.href = '/'
 // }
 
-const currentRoomCollection = collection(db, `room_${room}`)
+const currentRoomCollection = computed(() => collection(db, `room_${room}`)).value
 const messages = useCollection(query(currentRoomCollection, orderBy('timestamp', 'desc'), limit(100)))
+
+onBeforeRouteUpdate((to, from, next) => {
+  if (from.path === '/chatroom') {
+    next()
+    // router.go(0)
+  }
+})
 
 function sendMessage(e: Event) {
   e.preventDefault()
@@ -102,8 +112,9 @@ function createRoom(e: Event) {
           <a class="hover:bg-transparent hover:underline" :href="`chatroom?user=${username}&name=global`">#global</a>
         </li> -->
         <li class="w-full px-3 py-1" v-for="room in rooms" :key="room.id">
-          <a class="hover:bg-transparent hover:underline"
-            :href="`chatroom?user=${username}&name=${room.name}`">#{{ room.name }}</a>
+          <RouterLink class="hover:bg-transparent hover:underline"
+            :to="{ name: 'chat', query: { user: username as string, name: room.name } }">
+            #{{ room.name }}</RouterLink>
         </li>
       </ul>
       <button @click="toggleCreateBox" class="btn m-2 p-2 bg-blue-800 rounded-xl">Create Room</button>
@@ -130,11 +141,11 @@ function createRoom(e: Event) {
     </div>
   </form>
 
-  <a id="home" class="text-xs" href="/">
+  <RouterLink id="home" class="text-xs" to="/">
     <span class="grid z-10 justify-center place-content-center fixed right-0 m-12 bottom-0 border
       border-gray-600 rounded-full bg-gray-9500 hover:bg-gray-900 h-10 w-10">
       Home</span>
-  </a>
+  </RouterLink>
 </template>
 
 <style scoped>

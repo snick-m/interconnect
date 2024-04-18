@@ -63,11 +63,11 @@
             </p>
         </div>
     </div>
-    <a id="home" class="text-xs" href="/">
+    <RouterLink id="home" class="text-xs" to="/">
         <span class="grid z-10 justify-center place-content-center fixed right-0 m-12 bottom-0 border
       border-gray-600 rounded-full bg-gray-9500 hover:bg-gray-900 h-10 w-10">
             Home</span>
-    </a>
+    </RouterLink>
 </template>
 
 <style scoped>

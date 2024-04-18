@@ -34,4 +34,4 @@ coverage
 
 
 # Config files
-firebase.config.js
+firebase.config.[jt]s

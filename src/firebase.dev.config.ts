@@ -1,5 +1,5 @@
 /*
-Copy and rename the file to firebase.config.js
+Copy and rename the file to firebase.config.ts
 and fill in the values with your firebase project configuration
 */
 
