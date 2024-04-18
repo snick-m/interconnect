@@ -19,11 +19,10 @@ const currentView = computed(() => {
 </script>
 
 <template>
-  <header class="absolute top-0 left-0 m-4">
-    <a href="/">Home</a> | <a href="about">About</a> |
-    <a href="non-existent-path">Broken Link</a>
-  </header>
   <component :is="currentView" />
+  <footer class="relative bottom-0 p-4 text-center col-span-2">
+    <p>© 2024 Interconnect</p>
+  </footer>
 </template>
 
 <style scoped></style>
