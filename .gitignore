@@ -31,3 +31,7 @@ coverage
 
 # VSCode
 .vscode
+
+
+# Config files
+firebase.config.js
