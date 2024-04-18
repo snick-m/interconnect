@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex flex-col text-left items-center place-self-center col-span-2 w-3/4">
+  <div class="flex flex-col text-left text-neutral-300 items-center place-self-center col-span-2 w-3/4">
     <h1 class="text-4xl font-bold">About the Project</h1>
     <p class="text-md mt-4">Interconnect is an open-source initiative aimed at shedding light on the
       critical gaps in mental health services for racialized individuals with disabilities, and those who have
@@ -79,6 +79,11 @@
       the underlying issues. This can help to improve the available data and research regarding the mental health
       support infrastructures in Canada.</p>
   </div>
+  <a id="home" class="text-xs" href="/">
+    <span class="grid z-10 justify-center place-content-center fixed right-0 m-12 bottom-0 border
+      border-gray-600 rounded-full bg-gray-9500 hover:bg-gray-900 h-10 w-10">
+      Home</span>
+  </a>
 </template>
 
 <style scoped>
@@ -87,7 +92,14 @@ a {
   text-decoration: underline;
 }
 
+a#home {
+  color: gray;
+  text-decoration: none;
+  font-size: x-small;
+}
+
 h1 {
   text-align: center;
+  color: white;
 }
 </style>

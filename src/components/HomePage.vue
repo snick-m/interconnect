@@ -17,7 +17,7 @@ function joinChat() {
           Individuals with Disabilities. Join us in amplifying voices, sharing experiences, and advocating for inclusive
           mental health resources in the face of systemic barriers, including incarceration and ableism.
           <br />
-          <a href="/about" class="text-blue-500">Learn more</a>
+          <a href="/about" class="text-blue-500">Why? Learn more -></a>
         </p>
       </div>
     </div>

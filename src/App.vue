@@ -20,9 +20,6 @@ const currentView = computed(() => {
 
 <template>
   <component :is="currentView" />
-  <footer class="relative bottom-0 p-4 text-center col-span-2">
-    <p>© 2024 Interconnect</p>
-  </footer>
 </template>
 
 <style scoped></style>
