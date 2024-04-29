@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div class="flex flex-col text-left text-neutral-300 items-center place-self-center col-span-2 w-3/4">
+    <div class="flex flex-col text-left text-neutral-800 items-center place-self-center col-span-2 w-3/4">
         <h1 class="text-4xl font-bold">Alternate Resources</h1>
         <p class="text-md mt-4">
             While this project brings to attention the lack of support resources, there are still some good resources
